@@ -9,15 +9,14 @@ if [ "${WHICH_SHNTOOL}" = "" ]; then
 	exit
 fi
 
-case $1 in
-	"-h")
+if [ "$1" = "-h" ]; then
 	echo "This Script reads a CUE file to split a big size FLAC into several tracks.
 Usage: $0 [option]
 Available options:
 	-h 		Shows this help and quits.
 "
-	exit;;
-esac
+	exit
+fi
 
 CUE_FILE=`ls *.cue`
 if [ "${CUE_FILE}" == "" ]; then

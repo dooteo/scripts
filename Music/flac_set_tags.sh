@@ -1,6 +1,6 @@
 #!/bin/bash
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2016
-# License: GPL 3
+# License: GPL v3
 
 METAFLAC=`which metaflac`
 if [ "${METAFLAC}" = "" ]; then

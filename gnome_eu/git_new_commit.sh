@@ -1,23 +1,17 @@
 #!/bin/bash
 
-echo -e "
-\n\tThis script is used to commit LINGUAS and eu.po file,  
-when eu.po file is brand new created and you entered a line 'eu' into LINGUAS file. 
-"
+echo -e "\n\tThis tool add and commit eu.po into local repository"
+echo -e "\tand pushes changes into remote git.gnome.org repository\n"
 
 # Delete previously created *mo and *pot files
-rm -f messages.mo *pot eu[0-9].po
+rm -f messages.mo *pot
+
+
+WHICH_BRANCH=`git branch | grep "^*" | cut -d" " -f2`
 
 git add eu.po
-git status
+git add LINGUAS
+echo -e "\n\n ---- Commit LINGUAS and eu.po files for Branch ${WHICH_BRANCH} -----\n\n"
 
-LINGUASFILE=""
-LINGUASMESSAGE=""
-if [ -f "LINGUAS" ] ; then
-	LINGUASFILE="LINGUAS"
-	LINGUASMESSAGE="\nAdded 'eu' (Basque) to LINGUAS"
-fi
-
-git commit eu.po ${LINGUASFILE} -m "Added Basque language${LINGUASMESSAGE}" --author "Inaki Larranaga Murgoitio <dooteo@zundan.com>"
-git push origin master
-
+git commit eu.po LINGUAS -m "Updated Basque language" --author "Inaki Larranaga Murgoitio <dooteo@zundan.com>"
+git push origin ${WHICH_BRANCH}

@@ -14,11 +14,14 @@ fi
 
 echo "Select comic you want ot fetch"
 echo "
- 1 - One Piece (default)
+ 1 - One Piece
  2 - Dr Slump
  3 - Dragon Ball
  4 - One Punch Man
  5 - Akira
+
+ Other ones wont download anything.
+
 "
 read comic
 

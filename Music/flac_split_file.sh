@@ -58,7 +58,7 @@ if [ ! -f ${NEW_MUSIC_FILE} ]; then
 	mv "${MUSIC_FILE}" ${NEW_MUSIC_FILE}
 fi
 
-${WHICH_SHNTOOL} split -f ${NEW_CUE_FILE} -o 'flac flac  --output-name=%f -' -t '%n-%p-%t' ${NEW_MUSIC_FILE}
+${WHICH_SHNTOOL} split -f ${NEW_CUE_FILE} -o 'flac flac  --output-name=%f -' -t '%n - %p - %t' ${NEW_MUSIC_FILE}
 
 # Note: convert DTS to FLAC with ffmpeg. For example: 
 #

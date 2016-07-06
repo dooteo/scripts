@@ -27,7 +27,7 @@ if [ ! -f ${NEW_APE_FILE} ]; then
 	mv "${APE_FILE}" ${NEW_APE_FILE}
 fi
 
-FLAC_FILE=`echo ${APE_FILE} | sed 's/\.ape/\.flac/g'`
+FLAC_FILE=`echo ${NEW_APE_FILE} | sed 's/\.ape/\.flac/g'`
 
-${WHICH_FFMPEG} -i ${APE_FILE} ${FLAC_FILE}
+${WHICH_FFMPEG} -i ${NEW_APE_FILE} ${FLAC_FILE}
 

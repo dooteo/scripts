@@ -19,6 +19,7 @@ echo "
  3 - Dragon Ball
  4 - One Punch Man
  5 - Akira
+ 6 - Vinland Saga
 
  Other ones wont download anything.
 
@@ -51,6 +52,11 @@ case $comic in
 	SECTION="akira"
 	COMIC_NAME="AKIRA"
 	;;
+6)
+	SECTION="vinland-saga"
+	COMIC_NAME="Vinland Saga"
+	;;
+
 *)
 	echo "Unknown comic selected. Bye!"	
 	exit
